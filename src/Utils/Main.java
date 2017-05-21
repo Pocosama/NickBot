@@ -23,6 +23,9 @@ public class Main {
         try {
             jda = new JDABuilder(AccountType.BOT).addEventListener(new BotListener()).setToken("MzA1ODQ5ODc5NzI3NzAyMDE2.C97VGA.-xaAdOM8zrrurEwDhNBCj3KJq2A").buildBlocking();
             jda.setAutoReconnect(true);
+
+
+
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -36,7 +39,10 @@ public class Main {
         commands.put("jesus", new JesusnickCommand());
         commands.put("csgo", new CSGOCommand());
         commands.put("brawlhalla", new BrawlCommand());
-        commands.put("what", new WhatCommand());
+        commands.put("wtf", new WhatCommand());
+        commands.put("spam", new SpamCommand());
+        commands.put("wop", new WopCommand());
+        commands.put("wat", new WatCommand());
     }
 
     public static void handleCommand(CommandParser.CommandContainer cmd) {

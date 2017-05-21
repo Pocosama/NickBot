@@ -13,7 +13,7 @@ public class CommandParser {
         ArrayList<String> split = new ArrayList<>();
         String raw = rw;
         String beheaded = raw.replaceFirst("nick.", "");
-        System.out.println(beheaded);
+        System.out.println(event.getAuthor().getName() + ": " + beheaded);
         String[] splitBeheaded = beheaded.split(" ");
         for (String s: splitBeheaded){
             split.add(s);

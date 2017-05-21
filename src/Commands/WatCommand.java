@@ -3,12 +3,10 @@ package Commands;
 import Utils.Command;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
-import java.io.File;
-
 /**
  * Created by David on 24/04/2017.
  */
-public class JesusnickCommand implements Command {
+public class WatCommand implements Command {
 
     @Override
     public boolean called(String[] args, MessageReceivedEvent event) {
@@ -17,11 +15,7 @@ public class JesusnickCommand implements Command {
 
     @Override
     public void action(String[] args, MessageReceivedEvent event) {
-        try {
-            event.getTextChannel().sendFile(new File(".\\src\\Images\\jesusnick.JPG"), null).queue();
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+        event.getTextChannel().sendMessage(":duck:").queue();
     }
 
     @Override

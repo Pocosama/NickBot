@@ -1,14 +1,13 @@
 package Commands;
 
 import Utils.Command;
+import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-
-import java.io.File;
 
 /**
  * Created by David on 24/04/2017.
  */
-public class JesusnickCommand implements Command {
+public class SpamCommand implements Command {
 
     @Override
     public boolean called(String[] args, MessageReceivedEvent event) {
@@ -17,10 +16,10 @@ public class JesusnickCommand implements Command {
 
     @Override
     public void action(String[] args, MessageReceivedEvent event) {
-        try {
-            event.getTextChannel().sendFile(new File(".\\src\\Images\\jesusnick.JPG"), null).queue();
-        } catch (Exception e){
-            e.printStackTrace();
+        User user = event.getAuthor();
+        user.openPrivateChannel().complete();
+        for (int i=0; i<20;i++){
+            user.getPrivateChannel().sendMessage("lul").queue();
         }
     }
 
